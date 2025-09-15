@@ -6,7 +6,7 @@ services:
   php:
     image: wodby/php:latest
     volumes:
-      - './html/var/www/html'
+      - './html:/var/www/html'
     depends_on:
       - mariadb
 # Nginx Service
@@ -17,7 +17,7 @@ services:
     links:
       - 'php'
     volumes:
-      - './html/var/www/html'
+      - './html:/var/www/html'
       - './docker/nginx:/etc/nginx/conf.d'
     depends_on:
       - php
@@ -38,7 +38,7 @@ services:
     environment:
       PMA_HOST: ${DB_HOST}
       PMA_USER: ${DB_USER}
-    PMA_PASSWORD: ${DB_PASSWORD}
+      PMA_PASSWORD: ${DB_PASSWORD}
     ports:
       - "1088:80"
 
