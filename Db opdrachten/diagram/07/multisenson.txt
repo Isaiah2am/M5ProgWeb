@@ -1,0 +1,1 @@
+a financial document like a multi-step income statement or a group of SQL commands executed as a single unit, known as a multi-statement request or multi-statement transaction.
